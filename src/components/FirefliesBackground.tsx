@@ -101,20 +101,32 @@ const FirefliesBackground: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Prevent drawing if canvas has no size
+    if (canvas.width === 0 || canvas.height === 0) return;
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     // Create deep space background
-    const gradient = ctx.createRadialGradient(
-      canvas.width / 2, canvas.height / 2, 0,
-      canvas.width / 2, canvas.height / 2, Math.max(canvas.width, canvas.height)
-    );
+    const safeWidth = Math.max(canvas.width, 1);
+    const safeHeight = Math.max(canvas.height, 1);
+    const maxRadius = Math.max(safeWidth, safeHeight, 1);
+    let gradient;
+    try {
+      gradient = ctx.createRadialGradient(
+        safeWidth / 2, safeHeight / 2, 0,
+        safeWidth / 2, safeHeight / 2, maxRadius
+      );
+    } catch (e) {
+      console.error('Failed to create background radial gradient:', { width: safeWidth, height: safeHeight, maxRadius }, e);
+      return;
+    }
     gradient.addColorStop(0, '#0a0a1a');
     gradient.addColorStop(0.5, '#1a1a3a');
     gradient.addColorStop(1, '#0a0a2e');
     
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, safeWidth, safeHeight);
 
     // Draw nebulae
     nebulaeRef.current.forEach(nebula => {
@@ -122,13 +134,21 @@ const FirefliesBackground: React.FC = () => {
       ctx.save();
       ctx.translate(nebula.x, nebula.y);
       ctx.rotate(nebula.rotation);
-      const nebulaGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, nebula.size);
+      const nebulaRadius = Math.max(nebula.size, 1);
+      let nebulaGradient;
+      try {
+        nebulaGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, nebulaRadius);
+      } catch (e) {
+        console.error('Failed to create nebula radial gradient:', { nebulaRadius }, e);
+        ctx.restore();
+        return;
+      }
       nebulaGradient.addColorStop(0, nebula.color);
       nebulaGradient.addColorStop(0.5, nebula.color.replace('0.3', '0.05'));
       nebulaGradient.addColorStop(1, 'transparent');
       ctx.globalAlpha = nebula.opacity;
       ctx.fillStyle = nebulaGradient;
-      ctx.fillRect(-nebula.size, -nebula.size, nebula.size * 2, nebula.size * 2);
+      ctx.fillRect(-nebulaRadius, -nebulaRadius, nebulaRadius * 2, nebulaRadius * 2);
       ctx.restore();
       ctx.globalAlpha = 1;
     });
@@ -189,13 +209,19 @@ const FirefliesBackground: React.FC = () => {
       const perspective = 500;
       const scale = perspective / (perspective - star.z);
       const alpha = Math.max(0, 1 - (star.life / star.maxLife)) * (0.5 + 0.5 * Math.sin(star.twinkle));
-      const size = star.size * scale;
+      const size = Math.max(star.size * scale, 1);
 
       // Draw star with glow
-      const starGradient = ctx.createRadialGradient(
-        star.x, star.y, 0,
-        star.x, star.y, size * 3
-      );
+      let starGradient;
+      try {
+        starGradient = ctx.createRadialGradient(
+          star.x, star.y, 0,
+          star.x, star.y, size * 3
+        );
+      } catch (e) {
+        console.error('Failed to create star radial gradient:', { x: star.x, y: star.y, size: size * 3 }, e);
+        continue;
+      }
       starGradient.addColorStop(0, star.color);
       starGradient.addColorStop(0.5, star.color + '80');
       starGradient.addColorStop(1, 'transparent');
@@ -239,18 +265,26 @@ const FirefliesBackground: React.FC = () => {
 
     // Draw mouse comet trail
     if (mouseRef.current.x && mouseRef.current.y) {
-      const cometGradient = ctx.createRadialGradient(
-        mouseRef.current.x, mouseRef.current.y, 0,
-        mouseRef.current.x, mouseRef.current.y, 50
-      );
-      cometGradient.addColorStop(0, 'rgba(255, 255, 255, 0.3)');
-      cometGradient.addColorStop(0.5, 'rgba(135, 206, 250, 0.2)');
-      cometGradient.addColorStop(1, 'transparent');
-      
-      ctx.fillStyle = cometGradient;
-      ctx.beginPath();
-      ctx.arc(mouseRef.current.x, mouseRef.current.y, 50, 0, Math.PI * 2);
-      ctx.fill();
+      let cometGradient;
+      try {
+        cometGradient = ctx.createRadialGradient(
+          mouseRef.current.x, mouseRef.current.y, 0,
+          mouseRef.current.x, mouseRef.current.y, 50
+        );
+      } catch (e) {
+        console.error('Failed to create comet radial gradient:', { x: mouseRef.current.x, y: mouseRef.current.y }, e);
+        cometGradient = null;
+      }
+      if (cometGradient) {
+        cometGradient.addColorStop(0, 'rgba(255, 255, 255, 0.3)');
+        cometGradient.addColorStop(0.5, 'rgba(135, 206, 250, 0.2)');
+        cometGradient.addColorStop(1, 'transparent');
+        
+        ctx.fillStyle = cometGradient;
+        ctx.beginPath();
+        ctx.arc(mouseRef.current.x, mouseRef.current.y, 50, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
 
     animationRef.current = requestAnimationFrame(animate);

@@ -108,7 +108,7 @@ const ExperienceSection: React.FC = () => {
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <motion.div
-              key={exp.title}
+              key={exp.title + '-' + index}
               variants={itemVariants}
               className="group relative"
             >

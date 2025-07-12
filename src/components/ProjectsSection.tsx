@@ -49,17 +49,6 @@ const ProjectsSection: React.FC = () => {
       constellation: 'Ursa Major',
     },
     {
-      title: 'Python Notes',
-      description: 'Comprehensive Python programming notes and examples covering advanced concepts and best practices.',
-      role: 'Developer',
-      stack: ['Python'],
-      icon: Code,
-      gradient: 'from-teal-500 to-blue-600',
-      github: 'https://github.com/Dubeysatvik123/Python-Notes',
-      demo: '#',
-      constellation: 'Draco',
-    },
-    {
       title: 'Skill Sadhana LMS',
       description: 'Learning Management System built with Frappe framework, featuring course management and student tracking.',
       role: 'Full Stack Developer',
@@ -102,6 +91,17 @@ const ProjectsSection: React.FC = () => {
       github: 'https://github.com/Dubeysatvik123/Genai',
       demo: '#',
       constellation: 'Phoenix',
+    },
+    {
+      title: 'AWS Automate',
+      description: 'A Python Flask application to automate provisioning of AWS EC2 instances, enabling rapid cloud infrastructure setup with a simple web interface.',
+      role: 'Cloud Automation Developer',
+      stack: ['Python', 'Flask', 'AWS EC2', 'Boto3'],
+      icon: Server,
+      gradient: 'from-yellow-400 to-green-500',
+      github: 'https://github.com/Dubeysatvik123/awsautomate.git',
+      demo: '#',
+      constellation: 'Centaurus',
     },
   ];
 
