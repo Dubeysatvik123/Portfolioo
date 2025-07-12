@@ -11,6 +11,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
 
   const titles = useMemo(() => [
     'DevOps Engineer',
@@ -19,6 +20,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
     'Backend Developer',
     'Creative Thinker'
   ], []);
+
+  useEffect(() => {
+    // Set window size safely
+    if (typeof window !== 'undefined') {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      
+      const handleResize = () => {
+        setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      };
+      
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   useEffect(() => {
     const currentTitle = titles[currentIndex];
@@ -71,13 +86,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             key={i}
             className="absolute w-1 h-1 bg-cyan-400 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * windowSize.width,
+              y: Math.random() * windowSize.height,
               opacity: 0
             }}
             animate={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * windowSize.width,
+              y: Math.random() * windowSize.height,
               opacity: [0, 1, 0]
             }}
             transition={{

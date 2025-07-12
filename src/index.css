@@ -32,8 +32,17 @@ html {
 body {
   overflow-x: hidden;
   background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 25%, #2a1a4a 50%, #1a1a3a 75%, #0a0a1a 100%);
+  background-color: #0a0a1a; /* Fallback color */
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
+  color: white; /* Ensure text is visible */
+}
+
+/* Ensure content is visible */
+#root {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 /* Prevent text selection on interactive elements */
@@ -83,6 +92,7 @@ canvas {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: cosmic-gradient-shift 8s ease infinite;
+  color: white; /* Fallback color */
 }
 
 @keyframes cosmic-gradient-shift {
@@ -273,46 +283,49 @@ canvas {
   animation: cosmic-bounce 2s ease-in-out infinite;
 }
 
-/* Nebula glow text effect */
+/* Nebula glow effect */
 .nebula-glow {
-  text-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 15px currentColor,
-    0 0 20px rgba(138, 43, 226, 0.5),
-    0 0 35px rgba(75, 0, 130, 0.3);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(138, 43, 226, 0.3) 0%,
+    rgba(75, 0, 130, 0.2) 50%,
+    transparent 100%
+  );
+  animation: nebula-pulse 4s ease-in-out infinite;
+}
+
+@keyframes nebula-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
 }
 
 /* Enhanced cosmic shadows */
 .shadow-cosmic {
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.3),
-    0 5px 15px rgba(0, 0, 0, 0.2),
-    0 0 20px rgba(139, 92, 246, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 30px rgba(139, 92, 246, 0.2);
 }
 
 .shadow-cosmic-lg {
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.4),
-    0 10px 25px rgba(0, 0, 0, 0.3),
-    0 0 30px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 50px rgba(139, 92, 246, 0.3);
 }
 
-/* Responsive cosmic text */
+/* Responsive text sizing */
 @media (max-width: 640px) {
   .text-cosmic-responsive {
-    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   
   .text-cosmic-responsive-lg {
-    font-size: clamp(1.5rem, 6vw, 3rem);
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 }
 
-/* Dark mode cosmic enhancements */
+/* Dark mode enhancements */
 @media (prefers-color-scheme: dark) {
   body {
     background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 25%, #2a1a4a 50%, #1a1a3a 75%, #0a0a1a 100%);
+    background-color: #0a0a1a;
   }
 }
 
@@ -328,7 +341,7 @@ canvas {
   }
 }
 
-/* Accessibility improvements */
+/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -336,15 +349,16 @@ canvas {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-/* High contrast mode support */
+/* High contrast mode */
 @media (prefers-contrast: high) {
   .glass,
   .glass-dark,
   .glass-cosmic {
-    background: rgba(0, 0, 0, 0.8) !important;
-    border: 2px solid #ffffff !important;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid white;
   }
 }

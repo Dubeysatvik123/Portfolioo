@@ -65,32 +65,32 @@ function App() {
 
   // Render the full main content after loading
   return (
-    <div className="min-h-screen bg-cosmic-gradient text-white overflow-x-hidden relative" style={{ zIndex: 1, background: '#0a0a1a' }}>
+    <div className="min-h-screen text-white overflow-x-hidden relative">
       <FirefliesBackground />
       <div className="relative z-10">
         <EngineerAvatar />
         <Navigation activeSection={activeSection} onSectionChange={scrollToSection} />
-        <main className="lg:ml-64">
-          <section id="hero" ref={heroRef}>
+        <main className="lg:ml-64 relative z-20">
+          <section id="hero" ref={heroRef} className="relative z-20">
             <HeroSection onNavigate={scrollToSection} />
           </section>
           <MemeStrip />
-          <section id="about" ref={aboutRef}>
+          <section id="about" ref={aboutRef} className="relative z-20">
             <AboutSection />
           </section>
-          <section id="skills" ref={skillsRef}>
+          <section id="skills" ref={skillsRef} className="relative z-20">
             <SkillsSection />
           </section>
-          <section id="projects" ref={projectsRef}>
+          <section id="projects" ref={projectsRef} className="relative z-20">
             <ProjectsSection />
           </section>
-          <section id="experience" ref={experienceRef}>
+          <section id="experience" ref={experienceRef} className="relative z-20">
             <ExperienceSection />
           </section>
-          <section id="contact" ref={contactRef}>
+          <section id="contact" ref={contactRef} className="relative z-20">
             <ContactSection />
           </section>
-          <section id="blog" ref={blogRef}>
+          <section id="blog" ref={blogRef} className="relative z-20">
             <BlogSection />
           </section>
         </main>
