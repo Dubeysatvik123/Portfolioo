@@ -25,11 +25,14 @@ const skills: Skill[] = [
   { name: 'Docker', icon: <FaDocker />, color: '#2496ed', category: 'DevOps' },
   { name: 'Kubernetes', icon: <SiKubernetes />, color: '#326ce5', category: 'DevOps' },
   { name: 'AWS', icon: <FaAws />, color: '#ff9900', category: 'Cloud' },
+  { name: 'Terraform', icon: <Cloud />, color: '#5c4ee5', category: 'DevOps' },
   { name: 'Linux', icon: <FaLinux />, color: '#fcc624', category: 'OS' },
   { name: 'MySQL', icon: <SiMysql />, color: '#4479a1', category: 'Database' },
   { name: 'Git', icon: <FaGitAlt />, color: '#f05032', category: 'Tools' },
   { name: 'Frappe', icon: <SiFrappe />, color: '#0089ff', category: 'Framework' },
   { name: 'AI/ML', icon: <BsRobot />, color: '#ff6b6b', category: 'AI' },
+  { name: 'AgenticAI', icon: <BsRobot />, color: '#a259ff', category: 'AI' },
+  { name: 'LangChain', icon: <BsRobot />, color: '#00bfae', category: 'AI' },
   { name: 'Bash', icon: <Terminal />, color: '#4eaa25', category: 'Scripting' },
   { name: 'Cloud', icon: <Cloud />, color: '#0078d4', category: 'Cloud' },
   { name: 'DevOps', icon: <Zap />, color: '#326ce5', category: 'Methodology' },
@@ -144,7 +147,7 @@ const SkillsSection: React.FC = () => {
     {
       title: 'DevOps & Cloud',
       icon: <Cloud className="w-6 h-6" />,
-      skills: ['Docker', 'Kubernetes', 'AWS', 'Cloud'],
+      skills: ['Docker', 'Kubernetes', 'AWS', 'Terraform', 'Cloud'],
       color: 'from-green-500 to-teal-500',
       description: 'Container orchestration and cloud infrastructure'
     },
@@ -158,14 +161,14 @@ const SkillsSection: React.FC = () => {
     {
       title: 'Frameworks & Tools',
       icon: <Server className="w-6 h-6" />,
-      skills: ['Frappe', 'Streamlit'],
+      skills: ['Frappe', 'Streamlit', 'LangChain'],
       color: 'from-purple-500 to-pink-500',
       description: 'Development frameworks and productivity tools'
     },
     {
       title: 'AI & Automation',
       icon: <Cpu className="w-6 h-6" />,
-      skills: ['AI/ML', 'DevOps'],
+      skills: ['AI/ML', 'AgenticAI', 'DevOps'],
       color: 'from-indigo-500 to-purple-500',
       description: 'Artificial intelligence and process automation'
     },

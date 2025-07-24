@@ -13,7 +13,6 @@ import ProjectsSection from './components/ProjectsSection';
 import ExperienceSection from './components/ExperienceSection';
 import ContactSection from './components/sections/ContactSection';
 import BlogSection from './components/BlogSection';
-import ChatbotIcon from './components/ChatbotIcon';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -94,7 +93,6 @@ function App() {
             <BlogSection />
           </section>
         </main>
-        <ChatbotIcon />
       </div>
     </div>
   );

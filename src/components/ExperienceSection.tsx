@@ -13,12 +13,12 @@ const ExperienceSection: React.FC = () => {
     {
       title: 'DevOps Intern',
       company: 'NetLink Software Pvt. Ltd.',
-      duration: 'February 2025 - June 2025',
+      duration: 'Sep 2024 - Oct 2024',
       location: 'Mandideep',
       description: [
-        'Manage Docker Container clusters using docker compose',
-        'Creating Kafka-Zookeeper production Cluster',
-        'Managed CI/CD pipeline for end to end automation'
+        'Managed Docker container clusters using Docker Compose',
+        'Created Kafka-Zookeeper production cluster',
+        'Managed CI/CD pipeline for end-to-end automation'
       ],
       technologies: ['Docker', 'Kafka', 'Zookeeper', 'CI/CD'],
       gradient: 'from-blue-500 to-cyan-600'
@@ -26,12 +26,12 @@ const ExperienceSection: React.FC = () => {
     {
       title: 'DevOps Intern',
       company: 'Codtech',
-      duration: 'September 2024 - October 2024',
+      duration: 'Sep 2024 - Oct 2024',
       location: 'Remote',
       description: [
-        'Managed CI/CD pipelines for automated software deployment',
-        'Created Python and Bash scripts for system monitoring and automation',
-        'Troubleshooting infrastructure issues, minimizing system downtime'
+        'Maintained CI/CD pipelines for automated deployments',
+        'Wrote Bash and Python scripts for monitoring and automation',
+        'Troubleshot infrastructure issues to reduce downtime'
       ],
       technologies: ['CI/CD', 'Python', 'Bash', 'Infrastructure'],
       gradient: 'from-green-500 to-teal-600'
@@ -39,12 +39,12 @@ const ExperienceSection: React.FC = () => {
     {
       title: 'AI/ML Developer Intern',
       company: 'Internpe',
-      duration: 'August 2024 - September 2024',
+      duration: 'Aug 2024 - Sep 2024',
       location: 'Remote',
       description: [
-        'Built and optimized ML models with automation and scripting',
-        'Conducted data analysis using SQL for decision-making',
-        'Developed Python scripts for model deployment and monitoring'
+        'Built & optimized ML models using automation and scripting',
+        'Performed data analysis using SQL for decision-making',
+        'Developed Python scripts for model deployment'
       ],
       technologies: ['ML', 'Python', 'SQL', 'Automation'],
       gradient: 'from-purple-500 to-pink-600'

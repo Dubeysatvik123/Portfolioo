@@ -12,13 +12,13 @@ const ContactSection: React.FC = () => {
   const contactInfo = [
     { 
       icon: Mail, 
-      text: 'satvikdubey1203@gmail.com', 
-      href: 'mailto:satvikdubey1203@gmail.com',
+      text: 'satvikdubey268@gmail.com', 
+      href: 'mailto:satvikdubey268@gmail.com',
       color: 'from-blue-500 to-cyan-500'
     },
     { 
       icon: Github, 
-      text: 'github.com/Dubeysatvik123', 
+      text: 'GitHub: https://github.com/Dubeysatvik123', 
       href: 'https://github.com/Dubeysatvik123',
       color: 'from-gray-500 to-slate-500'
     },
