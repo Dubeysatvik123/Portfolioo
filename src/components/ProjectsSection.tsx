@@ -56,9 +56,9 @@ const ProjectsSection: React.FC = () => {
     },
     {
       title: 'Matrix',
-      description: 'Developed an interactive UI project using matrix animations and visual logic.',
-      role: 'Fullstack Developer',
-      stack: ['Python', 'NumPy', 'Mathematics', 'UI'],
+      description: 'Developed an interactive UI with streamlit empowerd with GenAI to solve mathematical reasoning based questions.',
+      role: 'GenAI',
+      stack: ['Python', 'GenAI', 'Mathematics', 'UI'],
       icon: Cpu,
       gradient: 'from-indigo-500 to-purple-600',
       github: 'https://github.com/Dubeysatvik123/Matrix',
@@ -76,9 +76,9 @@ const ProjectsSection: React.FC = () => {
     },
     {
       title: 'Agentic AI DevOps',
-      description: 'Developed a LangChain-based multi-agent system that provisions Jenkins, Docker, and Kubernetes automation pipelines.',
+      description: 'Developed a LangChain-based multi-agent that automatically analyze the project structure, creates the repo and pushes the code over the GITHUB.',
       role: 'Architect',
-      stack: ['LangChain', 'Jenkins', 'Docker', 'Kubernetes'],
+      stack: ['LangChain', 'Github', 'Python', 'Gemini'],
       icon: Brain,
       gradient: 'from-emerald-500 to-teal-600',
       github: 'https://github.com/Dubeysatvik123/Agentic_AI',
@@ -136,7 +136,7 @@ const ProjectsSection: React.FC = () => {
     },
     {
       title: 'GenAI Experiments',
-      description: 'Collection of LangChain, Groq, and OpenAI-based experiments in autonomous agent systems.',
+      description: 'Created a startup and idea evaluator, analyzes the idea based on feasiablity tech stack etc.',
       role: 'GenAI Developer',
       stack: ['LangChain', 'Groq', 'OpenAI', 'Python'],
       icon: Brain,
@@ -144,16 +144,7 @@ const ProjectsSection: React.FC = () => {
       github: 'https://github.com/Dubeysatvik123/Genai',
       constellation: 'Draco',
     },
-    {
-      title: 'MERN Stack App',
-      description: 'Built a MongoDB, Express, React, Node.js based fullstack CRUD app.',
-      role: 'Fullstack Developer',
-      stack: ['MongoDB', 'Express', 'React', 'Node.js'],
-      icon: Code,
-      gradient: 'from-green-400 to-blue-500',
-      github: 'https://github.com/Dubeysatvik123/MERN',
-      constellation: 'Sirius',
-    },
+    
     {
       title: 'Portfolio Website',
       description: 'Developed a modern dark-themed portfolio with blogs, contact, and projects section.',
