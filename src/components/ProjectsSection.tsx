@@ -144,7 +144,16 @@ const ProjectsSection: React.FC = () => {
       github: 'https://github.com/Dubeysatvik123/Genai',
       constellation: 'Draco',
     },
-    
+    {
+      title: 'MERN Stack App',
+      description: 'Built a MongoDB, Express, React, Node.js based fullstack CRUD app.',
+      role: 'Fullstack Developer',
+      stack: ['MongoDB', 'Express', 'React', 'Node.js'],
+      icon: Code,
+      gradient: 'from-green-400 to-blue-500',
+      github: 'https://github.com/Dubeysatvik123/MERN',
+      constellation: 'Sirius',
+    },
     {
       title: 'Portfolio Website',
       description: 'Developed a modern dark-themed portfolio with blogs, contact, and projects section.',
