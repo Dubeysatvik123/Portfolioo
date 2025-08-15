@@ -11,44 +11,44 @@ const ExperienceSection: React.FC = () => {
 
   const experiences = [
     {
+      title: 'AIOps Intern',
+      company: 'LinuxWorld Pvt. Ltd., Jaipur',
+      duration: 'May 2025 – July 2025',
+      location: 'Jaipur',
+      description: [
+        'Designed and deployed a custom cloud computing platform integrating machine learning models with DevOps pipelines for automation and scalability.',
+        'Implemented Generative AI features using the ChatGPT API, enabling intelligent system interactions and automated decision-making.',
+        'Automated deployment workflows with Docker, Kubernetes, and CI/CD, ensuring high availability and seamless model updates.'
+      ],
+      technologies: ['Cloud', 'DevOps', 'ML', 'Docker', 'Kubernetes', 'CI/CD', 'ChatGPT API'],
+      gradient: 'from-purple-500 to-cyan-600'
+    },
+    {
       title: 'DevOps Intern',
-      company: 'NetLink Software Pvt. Ltd.',
-      duration: 'Sep 2024 - Oct 2024',
+      company: 'Netlink Software Pvt. Ltd., Mandideep',
+      duration: 'Feb 2025 – May 2025',
       location: 'Mandideep',
       description: [
-        'Managed Docker container clusters using Docker Compose',
-        'Created Kafka-Zookeeper production cluster',
-        'Managed CI/CD pipeline for end-to-end automation'
+        'Deployed ERPNext on a Docker cluster using Docker Compose, ensuring scalability and ease of management.',
+        'Built and configured a Kafka–Zookeeper production cluster for real-time data streaming and a 3-node MongoDB cluster for high availability.',
+        'Conducted research and experimentation with Qdrant vector database for AI-powered search and retrieval use cases.'
       ],
-      technologies: ['Docker', 'Kafka', 'Zookeeper', 'CI/CD'],
+      technologies: ['Docker', 'Kafka', 'Zookeeper', 'MongoDB', 'Qdrant', 'ERPNext'],
       gradient: 'from-blue-500 to-cyan-600'
     },
     {
-      title: 'DevOps Intern',
-      company: 'Codtech',
-      duration: 'Sep 2024 - Oct 2024',
+      title: 'Frappe LMS Developer',
+      company: 'College Project',
+      duration: '2024',
       location: 'Remote',
       description: [
-        'Maintained CI/CD pipelines for automated deployments',
-        'Wrote Bash and Python scripts for monitoring and automation',
-        'Troubleshot infrastructure issues to reduce downtime'
+        'Developed and deployed a custom Learning Management System (LMS) for college using the Frappe Framework, enabling course management, assignments, and student tracking.',
+        'Integrated role-based access control (RBAC), automated notifications, and reporting modules to streamline academic operations and improve administrative efficiency.',
+        'Deployed the application on Frappe Cloud, leveraging its managed hosting, scalability, and automated updates to ensure high availability and low operational overhead.'
       ],
-      technologies: ['CI/CD', 'Python', 'Bash', 'Infrastructure'],
-      gradient: 'from-green-500 to-teal-600'
+      technologies: ['Frappe', 'Python', 'RBAC', 'Cloud', 'Automation'],
+      gradient: 'from-orange-500 to-yellow-600'
     },
-    {
-      title: 'AI/ML Developer Intern',
-      company: 'Internpe',
-      duration: 'Aug 2024 - Sep 2024',
-      location: 'Remote',
-      description: [
-        'Built & optimized ML models using automation and scripting',
-        'Performed data analysis using SQL for decision-making',
-        'Developed Python scripts for model deployment'
-      ],
-      technologies: ['ML', 'Python', 'SQL', 'Automation'],
-      gradient: 'from-purple-500 to-pink-600'
-    }
   ];
 
   const containerVariants = {

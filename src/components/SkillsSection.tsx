@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaPython, FaDocker, FaAws, FaLinux, FaGitAlt, FaDatabase } from 'react-icons/fa';
 import { SiKubernetes, SiMysql, SiFrappe, SiStreamlit, SiRedhat, SiDebian } from 'react-icons/si';
 import { BsRobot } from 'react-icons/bs';
-import { Terminal, Cloud, Code, Zap, Cpu, Server } from 'lucide-react';
+import { Terminal, Cloud, Code, Zap, Cpu, Server, Award } from 'lucide-react';
 
 interface Skill {
   name: string;
@@ -22,23 +22,35 @@ interface OrbitData {
 
 const skills: Skill[] = [
   { name: 'Python', icon: <FaPython />, color: '#3776ab', category: 'Programming' },
+  { name: 'Bash', icon: <Terminal />, color: '#4eaa25', category: 'Scripting' },
+  { name: 'Frappe Framework', icon: <SiFrappe />, color: '#0089ff', category: 'Framework' },
   { name: 'Docker', icon: <FaDocker />, color: '#2496ed', category: 'DevOps' },
   { name: 'Kubernetes', icon: <SiKubernetes />, color: '#326ce5', category: 'DevOps' },
-  { name: 'AWS', icon: <FaAws />, color: '#ff9900', category: 'Cloud' },
+  { name: 'OpenShift', icon: <Cloud />, color: '#e00b1c', category: 'DevOps' },
+  { name: 'Jenkins', icon: <Server />, color: '#d33833', category: 'DevOps' },
   { name: 'Terraform', icon: <Cloud />, color: '#5c4ee5', category: 'DevOps' },
-  { name: 'Linux', icon: <FaLinux />, color: '#fcc624', category: 'OS' },
-  { name: 'MySQL', icon: <SiMysql />, color: '#4479a1', category: 'Database' },
+  { name: 'Ansible', icon: <Zap />, color: '#e00b1c', category: 'DevOps' },
   { name: 'Git', icon: <FaGitAlt />, color: '#f05032', category: 'Tools' },
-  { name: 'Frappe', icon: <SiFrappe />, color: '#0089ff', category: 'Framework' },
-  { name: 'AI/ML', icon: <BsRobot />, color: '#ff6b6b', category: 'AI' },
-  { name: 'AgenticAI', icon: <BsRobot />, color: '#a259ff', category: 'AI' },
-  { name: 'LangChain', icon: <BsRobot />, color: '#00bfae', category: 'AI' },
-  { name: 'Bash', icon: <Terminal />, color: '#4eaa25', category: 'Scripting' },
-  { name: 'Cloud', icon: <Cloud />, color: '#0078d4', category: 'Cloud' },
-  { name: 'DevOps', icon: <Zap />, color: '#326ce5', category: 'Methodology' },
+  { name: 'AWS', icon: <FaAws />, color: '#ff9900', category: 'Cloud' },
+  { name: 'Linux', icon: <FaLinux />, color: '#fcc624', category: 'OS' },
   { name: 'RHEL', icon: <SiRedhat />, color: '#ee0000', category: 'OS' },
   { name: 'Debian', icon: <SiDebian />, color: '#a81d33', category: 'OS' },
-  { name: 'Streamlit', icon: <SiStreamlit />, color: '#ff4b4b', category: 'Framework' },
+  { name: 'K8sGPT', icon: <Cpu />, color: '#00bfae', category: 'Observability' },
+  { name: 'Prometheus', icon: <FaDatabase />, color: '#e6522c', category: 'Observability' },
+  { name: 'Grafana', icon: <FaDatabase />, color: '#f46800', category: 'Observability' },
+  { name: 'LangChain Agents', icon: <BsRobot />, color: '#00bfae', category: 'AI' },
+  { name: 'Generative AI', icon: <BsRobot />, color: '#ff6b6b', category: 'AI' },
+  { name: 'Prompt Engineering', icon: <Code />, color: '#a259ff', category: 'AI' },
+  { name: 'AiChat', icon: <BsRobot />, color: '#00bfae', category: 'AI' },
+  { name: 'ShellGPT', icon: <BsRobot />, color: '#ff6b6b', category: 'AI' },
+  { name: 'Codium', icon: <Code />, color: '#3776ab', category: 'Productivity' },
+  { name: 'Brainboard', icon: <Cloud />, color: '#5c4ee5', category: 'Productivity' },
+  // Soft Skills (as tags)
+  { name: 'Problem Solving', icon: <Zap />, color: '#326ce5', category: 'Soft Skill' },
+  { name: 'Communication', icon: <Cloud />, color: '#0078d4', category: 'Soft Skill' },
+  { name: 'Teamwork', icon: <Server />, color: '#d33833', category: 'Soft Skill' },
+  { name: 'Adaptability', icon: <Cpu />, color: '#00bfae', category: 'Soft Skill' },
+  { name: 'Leadership', icon: <Award />, color: '#ff9900', category: 'Soft Skill' },
 ];
 
 const SkillsSection: React.FC = () => {
@@ -138,47 +150,47 @@ const SkillsSection: React.FC = () => {
 
   const skillCategories = [
     {
-      title: 'Programming Languages',
+      title: 'Programming & Scripting',
       icon: <Code className="w-6 h-6" />,
-      skills: ['Python', 'Bash'],
+      skills: ['Python', 'Bash', 'Frappe Framework'],
       color: 'from-blue-500 to-cyan-500',
-      description: 'Core programming languages for development and automation'
+      description: 'Core programming and scripting languages for automation and backend development',
     },
     {
       title: 'DevOps & Cloud',
       icon: <Cloud className="w-6 h-6" />,
-      skills: ['Docker', 'Kubernetes', 'AWS', 'Terraform', 'Cloud'],
+      skills: ['Docker', 'Kubernetes', 'OpenShift', 'Jenkins', 'Terraform', 'Ansible', 'AWS'],
       color: 'from-green-500 to-teal-500',
-      description: 'Container orchestration and cloud infrastructure'
+      description: 'Container orchestration, automation, and cloud infrastructure',
     },
     {
       title: 'Operating Systems',
       icon: <Terminal className="w-6 h-6" />,
       skills: ['Linux', 'RHEL', 'Debian'],
       color: 'from-orange-500 to-red-500',
-      description: 'System administration and server management'
+      description: 'System administration and server management',
     },
     {
-      title: 'Frameworks & Tools',
-      icon: <Server className="w-6 h-6" />,
-      skills: ['Frappe', 'Streamlit', 'LangChain'],
-      color: 'from-purple-500 to-pink-500',
-      description: 'Development frameworks and productivity tools'
-    },
-    {
-      title: 'AI & Automation',
+      title: 'Monitoring & Observability',
       icon: <Cpu className="w-6 h-6" />,
-      skills: ['AI/ML', 'AgenticAI', 'DevOps'],
+      skills: ['K8sGPT', 'Prometheus', 'Grafana'],
       color: 'from-indigo-500 to-purple-500',
-      description: 'Artificial intelligence and process automation'
+      description: 'Monitoring, alerting, and observability tools for cloud-native systems',
     },
     {
-      title: 'Database & Version Control',
-      icon: <FaDatabase className="w-6 h-6" />,
-      skills: ['MySQL', 'Git'],
-      color: 'from-cyan-500 to-blue-500',
-      description: 'Data management and version control systems'
-    }
+      title: 'AI/ML & Productivity',
+      icon: <BsRobot className="w-6 h-6" />,
+      skills: ['LangChain Agents', 'Generative AI', 'Prompt Engineering', 'AiChat', 'ShellGPT', 'Codium', 'Brainboard'],
+      color: 'from-purple-500 to-pink-500',
+      description: 'AI/ML frameworks, generative AI, and productivity tools',
+    },
+    {
+      title: 'Soft Skills',
+      icon: <Award className="w-6 h-6" />,
+      skills: ['Problem Solving', 'Communication', 'Teamwork', 'Adaptability', 'Leadership'],
+      color: 'from-yellow-500 to-orange-500',
+      description: 'Essential soft skills for effective engineering and leadership',
+    },
   ];
 
   return (

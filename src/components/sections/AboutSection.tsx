@@ -60,17 +60,18 @@ const AboutSection: React.FC = () => {
   };
 
   const personalInfo = [
-    { icon: MapPin, text: 'In Front Of Kasturba School, Gandhi Nagar, Itarsi 461111', color: 'text-blue-400' },
+    { icon: MapPin, text: 'Gandhi Nagar, Itarsi, MP 461111', color: 'text-blue-400' },
     { icon: Phone, text: '+91 7987285470', color: 'text-green-400' },
     { icon: Mail, text: 'satvikdubey268@gmail.com', color: 'text-purple-400' },
     { icon: Github, text: 'https://github.com/Dubeysatvik123', color: 'text-gray-400' },
+    // Add Portfolio and LinkedIn if needed
   ];
 
   const achievements = [
-    'Red Hat Academy Campus Ambassador (2022–2025): Conducted training and promoted Red Hat certifications.',
-    'Technical Club Coordinator (Nov 2023–May 2025): Organized Linux and automation workshops.',
-    'B.Tech in Computer Science and Engineering, RGPV University, Bhopal (CGPA: 7.64)',
-    '10+2 (Senior Secondary), Vardhaman Public School, Itarsi (2018–2021)'
+    'Red Hat Academy Campus Ambassador (2022–2025): Conducted technical training sessions, promoted Red Hat certification programs, and facilitated student engagement in open-source technologies.',
+    'Technical Club Coordinator (Nov 2023–May 2025): Organized hands-on workshops on Linux administration, automation tools, and DevOps best practices, fostering peer learning and skill development.',
+    'B.Tech in Computer Science and Engineering, RGPV University, Bhopal (August 2021–June 2025)',
+    'Higher Secondary, Vardhaman Public School, Itarsi (April 2018–May 2021)',
   ];
 
   return (
@@ -114,7 +115,7 @@ const AboutSection: React.FC = () => {
             className="text-xl text-gray-300 max-w-3xl mx-auto mt-6"
             variants={fadeInUp}
           >
-            DevOps, ML, and AI enthusiast with a passion for automation, cloud, and intelligent systems. I bridge technical excellence with creative innovation, always striving to deliver scalable, future-ready solutions.
+            B.Tech CSE graduate skilled in DevOps, Cloud Computing, and AI-driven automation. Proficient in Docker, Kubernetes, AWS, Jenkins, Terraform, Ansible, and IaC tools. Experienced in CI/CD pipeline design, cloud-native deployments, and integrating Generative AI into workflows. Adept at building scalable, secure, and high-availability systems with strong monitoring and observability practices.
           </motion.p>
         </motion.div>
 
@@ -149,17 +150,15 @@ const AboutSection: React.FC = () => {
                 animate={inView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                Hi, I'm Satvik Dubey — a detail-oriented Computer Science graduate from RGPV University (CGPA 7.64).
-                I specialize in Python scripting, system automation, Linux administration, DevOps tooling, and GenAI frameworks like LangChain and AgenticAI.
+                Hi, I'm Satvik Dubey — a B.Tech CSE graduate with a passion for DevOps, Cloud, and AI-driven automation. I specialize in Docker, Kubernetes, AWS, Jenkins, Terraform, Ansible, and Infrastructure as Code. My expertise includes designing CI/CD pipelines, cloud-native deployments, and integrating Generative AI into DevOps workflows.
               </motion.p>
-              
               <motion.p
                 className="text-gray-300 leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 1, duration: 0.8 }}
               >
-                I love solving problems, building scalable backends, and exploring GenAI tools. My expertise includes AWS, Terraform, Docker, and Kubernetes. Based in Gandhi Nagar, Itarsi, I'm passionate about building futuristic tech experiences.
+                I build scalable, secure, and highly available systems with strong monitoring and observability. Based in Gandhi Nagar, Itarsi, I enjoy solving complex problems and driving innovation in cloud and AI engineering.
               </motion.p>
             </motion.div>
 

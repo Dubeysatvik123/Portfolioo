@@ -37,6 +37,11 @@ const PublicationsSection: React.FC = () => {
               <p className="text-gray-300 mb-1">
                 <span className="font-semibold">Year:</span> 2025
               </p>
+              <ul className="list-disc pl-6 text-gray-300 mb-2">
+                <li>Designed and implemented an LLM-powered cognitive agent to enhance observability, automate incident response, and enforce DevSecOps policies in real-time production environments.</li>
+                <li>Demonstrated measurable operational improvements: <b>44% lower MTTR</b>, <b>18% higher incident diagnosis accuracy</b>, and <b>46% reduction in engineer workload</b>.</li>
+                <li>Integrated agentic AI reasoning (ReAct, AutoGen) with policy-as-code governance for secure, explainable, and adaptive reliability engineering.</li>
+              </ul>
               <motion.a
                 href="https://www.ijrrr.com/specialissues2-2025/ijrrr-Special-Issue-2-2025-paper39.pdf"
                 target="_blank"
