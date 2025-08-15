@@ -19,6 +19,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange 
     { id: 'experience', label: 'Experience', icon: Briefcase, color: 'from-red-500 to-orange-500' },
     { id: 'contact', label: 'Contact', icon: Mail, color: 'from-orange-500 to-yellow-500' },
     { id: 'blog', label: 'Blog', icon: BookOpen, color: 'from-yellow-500 to-green-500' },
+    { id: 'publications', label: 'Publications', icon: BookOpen, color: 'from-cyan-600 to-purple-600' },
   ];
 
   return (

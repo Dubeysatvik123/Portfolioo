@@ -13,6 +13,7 @@ import ProjectsSection from './components/ProjectsSection';
 import ExperienceSection from './components/ExperienceSection';
 import ContactSection from './components/sections/ContactSection';
 import BlogSection from './components/BlogSection';
+import PublicationsSection from './components/sections/PublicationsSection';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
   const [experienceRef, experienceInView] = useInView({ threshold: 0.3 });
   const [contactRef, contactInView] = useInView({ threshold: 0.3 });
   const [blogRef, blogInView] = useInView({ threshold: 0.3 });
+  const [publicationsRef, publicationsInView] = useInView({ threshold: 0.3 });
 
   // Update active section based on scroll position
   useEffect(() => {
@@ -37,7 +39,8 @@ function App() {
     else if (experienceInView) setActiveSection('experience');
     else if (contactInView) setActiveSection('contact');
     else if (blogInView) setActiveSection('blog');
-  }, [heroInView, aboutInView, skillsInView, projectsInView, experienceInView, contactInView, blogInView]);
+    else if (publicationsInView) setActiveSection('publications');
+  }, [heroInView, aboutInView, skillsInView, projectsInView, experienceInView, contactInView, blogInView, publicationsInView]);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId: string) => {
@@ -91,6 +94,9 @@ function App() {
           </section>
           <section id="blog" ref={blogRef} className="relative z-20">
             <BlogSection />
+          </section>
+          <section id="publications" ref={publicationsRef} className="relative z-20">
+            <PublicationsSection />
           </section>
         </main>
       </div>
